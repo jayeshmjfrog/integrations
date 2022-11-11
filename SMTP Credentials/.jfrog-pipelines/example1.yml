@@ -1,7 +1,7 @@
 pipelines:
-  - name: smtp_pipe
+  - name: smtpNotify
     steps:
-      - name: test_step_1
+      - name: mySMTP
         type: Bash
         configuration:
           integrations:
