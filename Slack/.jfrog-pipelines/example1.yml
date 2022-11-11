@@ -1,7 +1,7 @@
 pipelines:
-  - name: pipe1
+  - name: slackNotify
     steps:
-      - name: test_step_1
+      - name: step_1
         type: Bash
         configuration:
           integrations:
