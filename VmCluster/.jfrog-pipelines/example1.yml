@@ -1,0 +1,20 @@
+resources:
+   - name: vmCluster_1
+     type: VmCluster
+     configuration:
+       sshKey: ACME_SSHKEY
+       targets:
+         - 1.2.3.4
+
+pipelines:
+  - name: vmCluster_Pipeline_1
+    steps:
+      - name: VM_0001
+        type: PowerShell
+        configuration:
+          nodePool: win_2019        
+          inputResources:
+            - name: vmCluster_1
+        execution:
+          onExecute:
+            - write-output "executing step..."
