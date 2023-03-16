@@ -2,7 +2,7 @@ resources:
   - name: my_repo_1
     type: GitRepo
     configuration:
-      gitProvider: MyGithub
+      gitProvider: JMGit
       path: myrepo/myproject
 
 pipelines:
@@ -24,8 +24,8 @@ pipelines:
           inputResources:
             - name: my_repo_1
           integrations:
-            - name: myArtifactory
-            - name: myJira
+            - name: JMArtifactory
+            - name: JMJira
         execution:
           onFailure:
-            - send_notification myJira --attach-file "$step_tmp_dir/log.txt" --description "Failure occured in $pipeline_name - $step_name" --summary "$step_name has failed" 
+            - send_notification JMJira --attach-file "$step_tmp_dir/log.txt" --description "Failure occured in $pipeline_name - $step_name" --summary "$step_name has failed" 
