@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: JMGit
-      path: myrepo/myproject
+      path: integrations/Jira
 
 pipelines:
   - name: jira_ticket_example
